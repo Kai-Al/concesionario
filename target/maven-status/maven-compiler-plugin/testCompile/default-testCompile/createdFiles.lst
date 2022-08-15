@@ -1,0 +1,11 @@
+com\udea\concesionario\com\udea\concesionario\controller\ApplicationTest.class
+com\udea\concesionario\com\udea\concesionario\controller\MarcaControllerClient.class
+com\udea\concesionario\com\udea\concesionario\controller\AccountControllerClient.class
+com\udea\concesionario\com\udea\concesionario\controller\UserControllerTest.class
+com\udea\concesionario\com\udea\concesionario\controller\AutoControllerClient.class
+com\udea\concesionario\com\udea\concesionario\controller\AbstractTest.class
+com\udea\concesionario\com\udea\concesionario\controller\AccountControllerTest.class
+com\udea\concesionario\com\udea\concesionario\controller\AuthenticationControllerClient.class
+com\udea\concesionario\com\udea\concesionario\controller\MarcaControllerTest.class
+com\udea\concesionario\com\udea\concesionario\controller\UserControllerClient.class
+com\udea\concesionario\com\udea\concesionario\controller\AutoControllerTest.class

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.udea.concesionario" epkg="pojo" v="5.4.3" rws="_166060106308527" Pws="_166060106308527" cws="_166060106308527" persistenceUnitName="com.udea_concesionario_war_1.0-SNAPSHOTPU" pp="E" sm="false" xs="false" id="_166060106308526" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity name="Auto" lbl-ref="_166060126234334" compositePrimaryKeyClass="AutoPK" abs="false" class="Auto" v="true" jbn="false" xre="false" m="false" rootElement="_166060106308526" id="_166060110079928">
+        <ts e="true">
+            <a>_166060110080129</a>
+            <a>_166060126234334</a>
+            <a>_166060127798036</a>
+            <a>_166060129338237</a>
+            <a>_166060129718338</a>
+        </ts>
+        <hc e="true">
+            <a>_166060110080129</a>
+        </hc>
+        <eq e="true">
+            <a>_166060110080129</a>
+        </eq>
+        <con am="PUBLIC" e="true">
+            <a>_166060110080129</a>
+            <a>_166060126234334</a>
+            <a>_166060127798036</a>
+            <a>_166060129338237</a>
+            <a>_166060129718338</a>
+        </con>
+        <con am="PUBLIC" e="true"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="Modelo" ui="true" uil="Modelo" ft="false" id="_166060126234334">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Modelo requerido"/>
+                </bv>
+                <column name="Modelo" unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="byte" v="true" xvt="" name="Foto" uil="Foto" ft="false" id="_166060127798036">
+                <xwm/>
+                <xm/>
+                <column name="Foto" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="Precio" uil="Precio" ft="false" id="_166060129338237">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Precio requerido"/>
+                    <pz m="Debe ser un valor positivo"/>
+                </bv>
+                <column name="Precio" unique="false" nullable="false" insertable="true" updatable="true" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="Descripcion" uil="Descripcion" ft="false" id="_166060129718338">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Descripción requerida"/>
+                </bv>
+                <column name="Descripcion" unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_166060110334131" connected-attribute-id="_166060245273296" v="true" xvt="" name="marca" id="_166060245273195">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" ui="false" ft="false" id="_166060110080129">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Id requerido"/>
+                    <pz m="Debe ser mayor a cero"/>
+                </bv>
+                <column name="Id" unique="true" nullable="false" insertable="true" updatable="true"/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Auto.findAll">
+            <query>Select e from Auto e</query>
+        </nq>
+        <nq e="false" name="Auto.findByModelo">
+            <query>Select a from Auto a where a.Modelo=:Modelo</query>
+        </nq>
+        <nq e="false" name="Auto.findByFoto">
+            <query>Select a from Auto a where a.Foto=:Foto</query>
+        </nq>
+        <nq e="false" name="Auto.findByPrecio">
+            <query>Select a from Auto a where a.Precio=:Precio</query>
+        </nq>
+        <nq e="false" name="Auto.findByDescripcion">
+            <query>Select a from Auto a where a.Descripcion=:Descripcion</query>
+        </nq>
+    </entity>
+    <entity name="Marca" lbl-ref="_166060181197544" compositePrimaryKeyClass="MarcaPK" abs="false" class="Marca" v="true" jbn="false" xre="false" m="false" rootElement="_166060106308526" id="_166060110334131">
+        <ts e="true">
+            <a>_166060110334132</a>
+            <a>_166060181197544</a>
+            <a>_166060181883045</a>
+        </ts>
+        <hc e="true">
+            <a>_166060110334132</a>
+        </hc>
+        <eq e="true">
+            <a>_166060110334132</a>
+        </eq>
+        <con am="PUBLIC" e="true"/>
+        <con am="PUBLIC" e="true">
+            <a>_166060110334132</a>
+            <a>_166060181197544</a>
+            <a>_166060181883045</a>
+        </con>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="Nombre" ui="true" uil="Nombre" ft="false" id="_166060181197544">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Nombre requerido"/>
+                </bv>
+                <column name="Nombre" unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="Pais" uil="Pais" ft="false" id="_166060181883045">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Pais requerido"/>
+                </bv>
+                <column name="Pais" unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_166060110079928" connected-attribute-id="_166060245273195" v="true" xvt="" name="autos" id="_166060245273296">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" ui="false" ft="false" id="_166060110334132">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="Id requerido"/>
+                </bv>
+                <column name="Id" unique="false" nullable="false" insertable="true" updatable="true"/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Marca.findAll">
+            <query>Select e from Marca e</query>
+        </nq>
+        <nq e="false" name="Marca.findByNombre">
+            <query>Select m from Marca m where m.Nombre=:Nombre</query>
+        </nq>
+        <nq e="false" name="Marca.findByPais">
+            <query>Select m from Marca m where m.Pais=:Pais</query>
+        </nq>
+    </entity>
+    <c>
+        <db u="jdbc:mysql://localhost:3300/concesionario?zeroDateTimeBehavior=CONVERT_TO_NULL" n="root" p="root" d="com.mysql.cj.jdbc.Driver"/>
+    </c>
+    <wsl>
+        <ws n="Main" id="_166060106308527">
+            <i ref="_166060110334131" x="702" y="163"/>
+            <i ref="_166060110079928" x="311" y="163"/>
+        </ws>
+    </wsl>
+</entity-mappings>

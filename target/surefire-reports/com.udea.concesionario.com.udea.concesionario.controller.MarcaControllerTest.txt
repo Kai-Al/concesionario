@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+Test set: com.udea.concesionario.com.udea.concesionario.controller.MarcaControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+com.udea.concesionario.com.udea.concesionario.controller.MarcaControllerTest  Time elapsed: 0 sec  <<< ERROR!
+java.lang.RuntimeException: Arquillian initialization has already been attempted, but failed. See previous exceptions for cause
+	at org.jboss.arquillian.junit.AdaptorManagerWithNotifier.handleSuiteLevelFailure(AdaptorManagerWithNotifier.java:36)
+	at org.jboss.arquillian.junit.AdaptorManager.initializeAdaptor(AdaptorManager.java:16)
+	at org.jboss.arquillian.junit.AdaptorManagerWithNotifier.initializeAdaptor(AdaptorManagerWithNotifier.java:19)
+	at org.jboss.arquillian.junit.Arquillian.run(Arquillian.java:109)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.RuntimeException: Could not create new instance of class org.jboss.arquillian.test.impl.EventTestRunnerAdaptor
+	at org.jboss.arquillian.test.spi.SecurityActions.newInstance(SecurityActions.java:146)
+	at org.jboss.arquillian.test.spi.SecurityActions.newInstance(SecurityActions.java:89)
+	at org.jboss.arquillian.test.spi.TestRunnerAdaptorBuilder.build(TestRunnerAdaptorBuilder.java:49)
+	at org.jboss.arquillian.junit.AdaptorManager.initializeAdaptor(AdaptorManager.java:21)
+	... 14 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.jboss.arquillian.test.spi.SecurityActions.newInstance(SecurityActions.java:144)
+	... 17 more
+Caused by: java.lang.AbstractMethodError: org.apache.xerces.dom.DocumentImpl.setXmlStandalone(Z)V
+	at org.jboss.shrinkwrap.descriptor.spi.node.dom.XmlDomDescriptorExporterImpl.to(XmlDomDescriptorExporterImpl.java:60)
+	at org.jboss.shrinkwrap.descriptor.spi.node.NodeDescriptorExporterImpl.to(NodeDescriptorExporterImpl.java:52)
+	at org.jboss.shrinkwrap.descriptor.spi.node.NodeDescriptorExporterImpl.to(NodeDescriptorExporterImpl.java:29)
+	at org.jboss.shrinkwrap.descriptor.spi.node.dom.XmlDomDescriptorExporter.to(XmlDomDescriptorExporter.java:51)
+	at org.jboss.shrinkwrap.descriptor.spi.node.dom.XmlDomDescriptorExporter.to(XmlDomDescriptorExporter.java:33)
+	at org.jboss.shrinkwrap.descriptor.spi.node.NodeDescriptorImplBase.exportTo(NodeDescriptorImplBase.java:53)
+	at org.jboss.shrinkwrap.descriptor.spi.DescriptorImplBase.exportAsString(DescriptorImplBase.java:82)
+	at org.jboss.arquillian.config.impl.extension.SystemPropertiesConfigurationPlaceholderResolver.resolveSystemProperties(SystemPropertiesConfigurationPlaceholderResolver.java:48)
+	at org.jboss.arquillian.config.impl.extension.SystemPropertiesConfigurationPlaceholderResolver.resolve(SystemPropertiesConfigurationPlaceholderResolver.java:54)
+	at org.jboss.arquillian.config.impl.extension.ConfigurationRegistrar.loadConfiguration(ConfigurationRegistrar.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:86)
+	at org.jboss.arquillian.core.impl.EventContextImpl.invokeObservers(EventContextImpl.java:103)
+	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:90)
+	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:133)
+	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:105)
+	at org.jboss.arquillian.core.impl.ManagerImpl.start(ManagerImpl.java:253)
+	at org.jboss.arquillian.test.impl.EventTestRunnerAdaptor.<init>(EventTestRunnerAdaptor.java:61)
+	... 22 more
+
